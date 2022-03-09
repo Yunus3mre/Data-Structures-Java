@@ -46,32 +46,7 @@ class DoubleLinkedList {
 		
 		
 	}
-	public void addAtPos(Object value,int pos) {
-		Node n=headNode;
-		Node temp;
-		Node newNode=new Node(value,null,null);
-		int c=0;
-			
-		if (pos==1) {
-			addBeg(value);
-		}else {
-			while (n!=null) {
-				
-				if(c==pos-2) {
-					temp=n.next;
-					n.next=newNode;
-					newNode.previous=n;
-					newNode.next=temp;
-					break;
-				}
-				c++;
-				n=n.next;
-			}
-		}
-		
-		
-		
-	}
+	
 	public void deleteFromFirst() {
 		
 		headNode=headNode.next;
@@ -89,28 +64,7 @@ class DoubleLinkedList {
 			n=n.next;
 		}
 	}
-	public void deleteAtPos(int pos) {
-		Node n=headNode;
-		int c=0;
-			
-		if (pos==1) {
-			deleteFromFirst();
-		}else if(pos==length()) {
-			deleteFromLast();
-		}else {
-			while(n!=null) {
-				if(c==pos-2) {
-					n.next=n.next.next;
-					n.next.next.previous=n;
-					break;
-				}
-				c++;
-				n=n.next;
-			}
-		}
-		
-		
-	}
+	
 	public int length() {
 		Node n=headNode;
 		int c=0;
